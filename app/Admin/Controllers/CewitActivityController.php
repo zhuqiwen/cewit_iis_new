@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Models\CewitActivities;
 
+use App\Models\CewitSigs;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -73,7 +74,15 @@ class CewitActivityController extends Controller
     {
         return Admin::grid(CewitActivities::class, function (Grid $grid) {
 
+
+
             $grid->id('ID')->sortable();
+
+            $grid->title('Title');
+            $grid->location('Location');
+            $grid->start_date('Start');
+            $grid->end_date('End');
+
 
             $grid->created_at();
             $grid->updated_at();
@@ -89,7 +98,19 @@ class CewitActivityController extends Controller
     {
         return Admin::form(CewitActivities::class, function (Form $form) {
 
+            $sig_options = CewitSigs::all()->mapWithKeys(function($item){
+                return [$item['id'] => $item['name']];
+            })->all();
+
             $form->display('id', 'ID');
+
+            $form->select('sig_id', 'SIG')
+                ->options($sig_options);
+
+            $form->text('title', 'Activity Title');
+            $form->text('location', 'Activity Location');
+            $form->text('start_date', 'Activity Start')->rules('date');
+            $form->text('end_date', 'Activity End')->rules('date');
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');

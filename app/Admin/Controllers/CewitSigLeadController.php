@@ -11,7 +11,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class CewitSitLeadController extends Controller
+class CewitSigLeadController extends Controller
 {
     use ModelForm;
 

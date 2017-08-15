@@ -74,6 +74,8 @@ class CewitSigController extends Controller
         return Admin::grid(CewitSigs::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
+            $grid->name('SIG Name');
+            $grid->descript('Description');
 
             $grid->created_at();
             $grid->updated_at();
@@ -90,6 +92,8 @@ class CewitSigController extends Controller
         return Admin::form(CewitSigs::class, function (Form $form) {
 
             $form->display('id', 'ID');
+            $form->text('name', 'SIG name');
+            $form->text('descript', 'SIG description');
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');

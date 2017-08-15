@@ -19,3 +19,4 @@
  */
 
 Encore\Admin\Form::forget(['map', 'editor']);
+ini_set('xdebug.max_nesting_level', 120);
