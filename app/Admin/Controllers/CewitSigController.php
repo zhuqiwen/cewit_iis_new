@@ -15,6 +15,9 @@ class CewitSigController extends Controller
 {
     use ModelForm;
 
+    protected $header = 'Special Interest Groups';
+    protected $description = 'A short description of special interest groups';
+
     /**
      * Index interface.
      *
@@ -24,8 +27,8 @@ class CewitSigController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header($this->header);
+            $content->description($this->description);
 
             $content->body($this->grid());
         });
@@ -41,8 +44,8 @@ class CewitSigController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header($this->header);
+            $content->description($this->description);
 
             $content->body($this->form()->edit($id));
         });

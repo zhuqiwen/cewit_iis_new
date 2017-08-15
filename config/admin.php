@@ -5,17 +5,17 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name'      => 'Laravel-admin',
+    'name'      => 'CEWiT IIS',
 
     /*
      * Logo in admin panel header.
      */
-    'logo'      => '<b>Laravel</b> admin',
+    'logo'      => '<b>CEWiT</b> IIS',
 
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>La</b>',
+    'logo-mini' => '<b>C</b>',
 
     /*
      * Laravel-admin url prefix.
@@ -30,7 +30,7 @@ return [
     /*
      * Laravel-admin html title.
      */
-    'title'  => 'Admin',
+    'title'  => 'CEWiT IIS',
 
     /*
      * Laravel-admin auth setting.
@@ -46,8 +46,7 @@ return [
      */
     'upload'  => [
 
-//        'disk' => 'admin',
-        'disk' => 'public',
+        'disk' => 'admin',
 
         'directory'  => [
             'image'  => 'image',
