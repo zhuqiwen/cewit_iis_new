@@ -1,0 +1,1 @@
+INSERT INTO cewit_iis.cewit_students (id, contact_id, current_year_of_school, created_at, updated_at, deleted_at) VALUES (1, 1, 'freshman', '2017-08-16 10:29:38', '2017-08-16 10:29:38', null);

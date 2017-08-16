@@ -1,0 +1,1 @@
+INSERT INTO cewit_iis.cewit_faculties (id, contact_id, rank, department, school, school_code, created_at, updated_at, deleted_at) VALUES (1, 2, 'rank 1', 'biology', 'Art and Science', 'CAS', '2017-08-16 10:33:29', '2017-08-16 10:33:29', null);

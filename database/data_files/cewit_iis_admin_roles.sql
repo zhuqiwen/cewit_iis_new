@@ -1,0 +1,5 @@
+INSERT INTO cewit_iis.admin_roles (id, name, slug, created_at, updated_at) VALUES (1, 'Administrator', 'administrator', '2017-08-16 13:08:08', '2017-08-16 13:08:08');
+INSERT INTO cewit_iis.admin_roles (id, name, slug, created_at, updated_at) VALUES (2, 'CEWiT Admin', 'cewit_admin', '2017-08-16 13:15:23', '2017-08-16 13:15:23');
+INSERT INTO cewit_iis.admin_roles (id, name, slug, created_at, updated_at) VALUES (3, 'Affiliate Admin', 'cewit_affiliate_admin', '2017-08-16 13:15:59', '2017-08-16 13:15:59');
+INSERT INTO cewit_iis.admin_roles (id, name, slug, created_at, updated_at) VALUES (4, 'SIG Admin', 'cewit_sig_admin', '2017-08-16 13:16:24', '2017-08-16 13:16:24');
+INSERT INTO cewit_iis.admin_roles (id, name, slug, created_at, updated_at) VALUES (5, 'Event Admin', 'cewit_event_admin', '2017-08-16 13:16:46', '2017-08-16 13:16:46');
