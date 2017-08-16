@@ -10,25 +10,54 @@ class CewitContacts extends Model
     use SoftDeletes;
 
     protected $table = 'cewit_contacts';
+    protected $appends = [
+        'full_name',
+        'student',
+        'staff',
+        'faculty',
+        'alum',
+        'affiliate_type',
+        'email',
+        ];
+
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'middle_name',
+        'iuid',
+        'gender',
+        'street',
+        'city',
+        'state',
+        'country',
+        'join_date',
+        'is_active',
+        'is_affiliate',
+        'is_test',
+    ];
+
+
+
+
 
     public function student()
     {
-        return $this->belongsTo('App\Models\CewitStudents', 'contact_id');
+        return $this->hasOne('App\Models\CewitStudents', 'contact_id');
     }
 
     public function faculty()
     {
-        return $this->belongsTo('App\Models\CewitFaculties', 'contact_id');
+        return $this->hasOne('App\Models\CewitFaculties', 'contact_id');
     }
 
     public function staff()
     {
-        return $this->belongsTo('App\Models\CewitStaff', 'contact_id');
+        return $this->hasOne('App\Models\CewitStaff', 'contact_id');
     }
 
     public function alum()
     {
-        return $this->belongsTo('App\Models\CewitAlums', 'contact_id');
+        return $this->hasOne('App\Models\CewitAlums', 'contact_id');
     }
 
     public function emails()
@@ -77,6 +106,75 @@ class CewitContacts extends Model
     }
 
 
+    public function getActiveAffiliates()
+    {
+        $data = $this->with(['student', 'faculty', 'staff', 'alum'])
+            ->where('is_active', 1)
+            ->where('is_affiliate', 1)
+            ->where('is_test', 0)
+            ->where('deleted_at', null)
+            ->get();
+        return $data;
+
+    }
+
+
+    protected function getStudentAttribute()
+    {
+        return $this->student()->first();
+    }
+
+    protected function getFacultyAttribute()
+    {
+        return $this->faculty()->first();
+    }
+
+    protected function getStaffAttribute()
+    {
+        return $this->staff()->first();
+    }
+
+    protected function getAlumAttribute()
+    {
+        return $this->alum()->first();
+    }
+
+    protected function getAffiliateTypeAttribute()
+    {
+        $type = '';
+
+        if($this->student)
+        {
+            $type .= 'student ';
+        }
+
+        if($this->faculty)
+        {
+            $type .= 'faculty ';
+        }
+
+        if($this->staff)
+        {
+            $type .= 'staff ';
+        }
+
+        if($this->alum)
+        {
+            $type .= 'alumni ';
+        }
+
+        return $type;
+    }
+
+    protected function getEmailAttribute()
+    {
+        return $this->emails()->where('is_primary', 1)->first();
+    }
+
+    protected function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }
 
 

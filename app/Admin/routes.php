@@ -13,8 +13,17 @@ Route::group([
     $router->get('/', 'HomeController@index');
 
     $router->resource('users', UserController::class);
-    $router->resource('activities', CewitActivityController::class);
-    $router->resource('sigs', CewitSigController::class);
+    $router->resource('affiliates', CewitAffiliateController::class);
+
+//    $router->get('affiliates', 'CewitAffiliateController@index');
+//
+//    $router->get('alumni/create', 'CewitAlumController@create');
+//    $router->post('alumni/store', 'CewitAlumController@store');
+
+
+
+
+
 
 
 });

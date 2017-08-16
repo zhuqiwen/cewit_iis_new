@@ -13,7 +13,7 @@ class CewitStudents extends Model
 
     public function contact()
     {
-        return $this->hasOne('App\Models\CewitContacts', 'contact_id');
+        return $this->belongsTo('App\Models\CewitContacts', 'contact_id');
     }
 
     public function academicPrograms()
