@@ -10,15 +10,15 @@ class CewitContacts extends Model
     use SoftDeletes;
 
     protected $table = 'cewit_contacts';
-    protected $appends = [
-        'full_name',
-        'student',
-        'staff',
-        'faculty',
-        'alum',
-        'affiliate_type',
-        'email',
-        ];
+//    protected $appends = [
+//        'full_name',
+//        'student',
+//        'staff',
+//        'faculty',
+//        'alum',
+//        'affiliate_type',
+//        'email',
+//        ];
 
     protected $fillable = [
         'first_name',
@@ -105,18 +105,22 @@ class CewitContacts extends Model
         return $this->belongsToMany('App\Models\CewitSigs', 'cewit_sig_leads', 'contact_id', 'sig_id');
     }
 
+//
+//    public function getActiveAffiliates()
+//    {
+//        $data = $this->with(['student', 'faculty', 'staff', 'alum'])
+//            ->where('is_active', 1)
+//            ->where('is_affiliate', 1)
+//            ->where('is_test', 0)
+//            ->where('deleted_at', null)
+//            ->get();
+//        return $data;
+//
+//    }
 
-    public function getActiveAffiliates()
-    {
-        $data = $this->with(['student', 'faculty', 'staff', 'alum'])
-            ->where('is_active', 1)
-            ->where('is_affiliate', 1)
-            ->where('is_test', 0)
-            ->where('deleted_at', null)
-            ->get();
-        return $data;
 
-    }
+
+
 
 
     protected function getStudentAttribute()
@@ -168,7 +172,7 @@ class CewitContacts extends Model
 
     protected function getEmailAttribute()
     {
-        return $this->emails()->where('is_primary', 1)->first();
+        return $this->emails()->where('is_primary', 1)->first()->email;
     }
 
     protected function getFullNameAttribute()

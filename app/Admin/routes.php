@@ -14,11 +14,14 @@ Route::group([
 
     $router->resource('users', UserController::class);
     $router->resource('affiliates', CewitAffiliateController::class);
+    $router->resource('students', CewitStudentController::class);
+    $router->resource('faculties', CewitFacultyController::class);
+    $router->resource('staff', CewitStaffController::class);
+    $router->resource('alumni', CewitAlumController::class);
 
-//    $router->get('affiliates', 'CewitAffiliateController@index');
-//
-//    $router->get('alumni/create', 'CewitAlumController@create');
-//    $router->post('alumni/store', 'CewitAlumController@store');
+
+
+
 
 
 

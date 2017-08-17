@@ -67,6 +67,7 @@ class CewitAffiliateController extends Controller
     }
 
 
+
     public function store(Request $request)
     {
         $contact = CewitContacts::create($request->all());
@@ -96,10 +97,10 @@ class CewitAffiliateController extends Controller
             $grid->last_name('Last Name')->sortable();
             $grid->gender('Gender')->sortable();
             $grid->iuid('IUID')->sortable();
-            $grid->email('Email');
+//            $grid->email('Email');
             $grid->join_date('Join Date')->sortable();
             // don't use sortable() on virtual attributes
-            $grid->affiliate_type('Affiliate Type');
+//            $grid->affiliate_type('Affiliate Type');
 
             if(!$user->isRole('cewit_admin') && !$user->isRole('affiliate_admin'))
             {

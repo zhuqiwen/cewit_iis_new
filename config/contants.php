@@ -32,5 +32,11 @@ return [
         'alumni' => 'Alumni',
     ],
 
+    'options_year_of_school' => [
+        'freshman' => 'Freshman',
+        'junior' => 'Junior',
+        'senior' => 'Senior',
+    ],
+
 
 ];
