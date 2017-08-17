@@ -52,12 +52,15 @@ class CewitDataImporterController extends Controller
 
     public function handleImport(Request $request)
     {
+        //TODO
+        dd($request->path());
         $file = $request->file('csv');
         $csvData = file_get_contents($file);
 //        dd($csvData);
         $rows = array_map('str_getcsv', explode("\n", $csvData));
 //        dd($rows);
         $header = array_shift($rows);
+
 
         foreach ($rows as $row)
         {

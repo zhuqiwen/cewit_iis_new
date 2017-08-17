@@ -24,7 +24,7 @@ Route::group([
     $router->get('/visualizations','CewitVisualizationController@index');
 
     $router->get('/import','CewitDataImporterController@index');
-    $router->post('/import/contacts','CewitDataImporterController@handleImport');
+    $router->post('/import/{model}','CewitDataImporterController@handleImport');
 
 
 
