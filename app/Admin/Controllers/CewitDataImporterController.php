@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\CewitContacts;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -53,7 +54,20 @@ class CewitDataImporterController extends Controller
     {
         $file = $request->file('csv');
         $csvData = file_get_contents($file);
-        dd($csvData);
+//        dd($csvData);
+        $rows = array_map('str_getcsv', explode("\n", $csvData));
+//        dd($rows);
+        $header = array_shift($rows);
+
+        foreach ($rows as $row)
+        {
+            $row = array_combine($header, $row);
+
+            //here we should figure a generic way to deal with
+            // possible date format error.
+
+            CewitContacts::updateOrCreate($row);
+        }
     }
 
 
