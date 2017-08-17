@@ -21,4 +21,9 @@
 Encore\Admin\Form::forget(['map', 'editor']);
 ini_set('xdebug.max_nesting_level', 300);
 
+// to enable custom view edtion.
+// to use original views, comment out this line.
+app('view')->prependNamespace('admin', resource_path('views/admin'));
+
+
 
