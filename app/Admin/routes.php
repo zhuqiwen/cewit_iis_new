@@ -18,7 +18,10 @@ Route::group([
     $router->resource('faculties', CewitFacultyController::class);
     $router->resource('staff', CewitStaffController::class);
     $router->resource('alumni', CewitAlumController::class);
+    $router->resource('sigs', CewitAlumController::class);
+    $router->resource('events', CewitAlumController::class);
 
+    $router->get('/visualizations','CewitVisualizationController@index');
 
 
 
