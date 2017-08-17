@@ -1,0 +1,6 @@
+first_name,last_name,middle_name,iuid,gender,street,city,state,country,join_date,is_active,is_affiliate,is_test
+first_name,last_name,middle_name,1234,gender,street,city,state,country,5/5/2017,1,1,0
+fn2,last_name,middle_name,1234,gender,street,city,state,country,5/5/2017,1,1,0
+fn3,last_name,middle_name,1234,gender,street,city,state,country,5/5/2017,1,1,0
+fn4,last_name,middle_name,1234,gender,street,city,state,country,5/5/2017,1,1,0
+fn5,last_name,middle_name,1234,gender,street,city,state,country,5/5/2017,1,1,0

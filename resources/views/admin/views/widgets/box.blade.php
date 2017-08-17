@@ -10,4 +10,7 @@
     <div class="box-body" style="display: block;">
         {!! $content !!}
     </div><!-- /.box-body -->
+    <div class="box-footer">
+        <button class="btn ">Export</button>
+    </div> <!-- / .box-footer -->
 </div>

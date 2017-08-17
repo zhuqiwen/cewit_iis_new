@@ -13,7 +13,10 @@
                 {!! $item['content'] !!}
             </div>
         </div>
+        <div class="collapse-footer">
+            <button class="btn">Export</button>
+        </div>
     </div>
-    @endforeach
 
+    @endforeach
 </div>
